@@ -1,0 +1,48 @@
+確率変数の四則演算とExpとlogについてまとめる
+連続値とりさんちについても。
+分布の代表として合計と期待値についても言及
+積分範囲や積分定数にも気を使って一般化したい
+
+X=f(x), Y=g(y), Z=h(z)
+f,g,hはいずれも確率密度関数
+X,Y,Zはいずれも確率変数
+確率変数ではない変数および定数A　(積分定数ではない)(これ以降、定数と呼称する)
+
+関数と関数の足し算：f(t)+g(t)
+関数と定数の足し算：f(x)+A
+確率変数X,Yの足し算Z=X+Y：∫f(z-y) g(y) dy
+f,g,hはいずれも確率密度関数
+h(z) = ∫δ(z-x-y) f(x) g(y) dxdy
+=∫f(z-y) g(y) dy
+確率変数と定数の足し算：f(x-A)
+
+関数と関数の引き算：f(t)-g(t)
+関数と定数の引き算：f(x)-A
+確率変数X,Yの引き算Z=X-Y：∫f(z+y) g(y) dy
+f,g,hはいずれも確率密度関数
+h(z) = ∫δ(z-x+y) f(x) g(y) dxdy
+=∫f(z+y) g(y) dy
+確率変数と定数の足し算：f(x+A)
+
+
+関数と関数の掛け算：f(t)g(t)
+関数と定数の掛け算：A*f(x)
+確率変数X,Yの掛け算Z=XY：∫(1/|y|) f(z/y) g(y) dy
+h(z) = ∫δ(z-xy) f(x) g(y) dxdy
+... 
+=∫(1/|y|) f(z/y) g(y) dy
+確率変数と定数の掛け算：f(x/A)/A
+
+
+関数と関数の割り算：f(t)/g(t)
+関数と定数の割り算：f(x)/A, A/f(x)
+確率変数X,Yの掛け算Z=XY：∫|y| f(yz) g(y) dy
+h(z) = ∫δ(z-x/y) f(x) g(y) dxdy
+... 
+=∫|y| f(yz) g(y) dy
+確率変数と定数の割り算：A*f(Ax)
+Y=A/Xのとき。A=h(z)=∫(1/|y|)f(z/y)g(y)dy, hがzによらない定数。A/X=
+
+
+
+https://shoichimidorikawa.github.io/Lec/ProbDistr/s-p-r.pdf

@@ -1,0 +1,186 @@
+\documentclass[a4paper,11pt]{ltjsarticle}
+\usepackage{amsmath}
+\begin{document}
+\tableofcontents
+\newpage
+
+
+
+\section{共通する前提}
+内容の正しさは自信ない。特に数学記号の使い方。\\
+
+これ以降、共通して用いる変数・関数\\
+$f(x), g(y), h(z)$:確率密度関数\\
+$X, Y, Z$:確率変数\\
+$A$:(確率変数ではない)変数および定数\\
+$i,j,k,N,M,L$:自然数\\
+$X=f(x), Y=g(y), Z=h(z)$\\
+特に断りがなければ、X,Y,Zは独立な確率変数\\
+特に断りがなければ、x,y,zは独立な変数
+\newpage
+
+
+\section{確率密度関数が連続値の確率変数XとAの四則演算}
+\subsection{和・足し算}
+$Y=X+A$のとき。$g(y) = f(x-A)$\ \ \ \ ($y=x-A$)
+\subsection{差・引き算}
+\subsubsection{X-A}
+$Y=X-A$のとき。$g(y) = f(x+A)$\ \ \ \ ($y=x+A$)
+\subsubsection{A-X}
+$Y=A-X$のとき。$g(y) = f(-x-A)$\ \ \ \ ($y=-x-A$)
+\subsection{積・掛け算}
+$Y=AX$のとき。$g(y) = \frac{f(x/A)}{A}$\ \ \ \ ($y=x/A$)
+\subsection{商・割り算}
+\subsubsection{X/A}
+$Y=X/A$のとき。$g(y) = Af(Ax)$\ \ \ \ ($y=AX$)\\
+Aで割るのではなくAの逆数をかけると考えることを推奨。
+\subsubsection{A/x}
+$Y=A/X$のとき。$g(y) = ???$\ \ \ \ ()\\
+この章、何か重大な間違いをしているような気がする。
+\newpage
+
+
+\section{確率密度関数が連続値の確率変数X,Yの四則演算}
+\subsection{Z=X+Y}
+足し算だから、x,y,zの単位は共通でなければならないことに留意。
+\subsubsection{不定積分と-∞から∞までの定積分}
+不定積分
+$$
+    h(z) = \int f(z-y) g(y)\,dy
+$$
+
+-∞から∞までの定積分
+$$
+    h(z) = \int_{-\infty}^{\infty} f(z-y) g(y)\,dy
+$$
+\subsubsection{定積分}
+\begin{description}
+    \item xの積分区間は$x_0 \leq x \leq x_1$
+    \item yの積分区間は$y_0 \leq y \leq y_1$
+\end{description}
+$$
+    f(x)=
+    \begin{cases}
+        \int_{-y_0}^{y_1} f(z-y) g(y)\,dy   & if\ \exists y,\  y\in \{ y_0 \leq y \leq y_1 \ | \ x_0 \leq z-y \leq x_1 \}\\
+        0                                   & otherwise,
+    \end{cases}
+$$
+(上の条件、$y_0 \leq y \leq y_1$と$x_0 \leq z-y \leq x_1$を同時に満たすyが存在する場合。と言いたい)
+
+
+\subsection{Z=X-Y}
+引き算だから、x,y,zの単位は共通でなければならないことに留意。
+\subsubsection{不定積分と-∞から∞までの定積分}
+不定積分
+$$
+    h(z) = \int f(z+y) g(y)\,dy
+$$
+
+-∞から∞までの定積分
+$$
+    h(z) = \int_{-\infty}^{\infty} f(z+y) g(y)\,dy
+$$
+\subsubsection{定積分}
+\begin{description}
+    \item xの積分区間は$x_0 \leq x \leq x_1$
+    \item yの積分区間は$y_0 \leq y \leq y_1$
+\end{description}
+$$
+    f(x)=
+    \begin{cases}
+        \int_{-y_0}^{y_1} f(z+y) g(y)\,dy   & if\ \exists y,\  y\in \{ y_0 \leq y \leq y_1 \ | \ x_0 \leq z+y \leq x_1 \}\\
+        0                                   & otherwise,
+    \end{cases}
+$$
+(上の条件、$y_0 \leq y \leq y_1$と$x_0 \leq z+y \leq x_1$を同時に満たすyが存在する場合。と言いたい)
+
+
+\subsection{Z=XY}
+積の計算。
+\subsubsection{不定積分と-∞から∞までの定積分}
+不定積分
+$$
+    h(z) = \int \frac{1}{|y|} f(z/y) g(y)\,dy
+$$
+
+-∞から∞までの定積分
+$$
+    h(z) = \int_{-\infty}^{\infty} \frac{1}{|y|} f(z/y) g(y)\,dy
+$$
+\subsubsection{定積分}
+\begin{description}
+    \item xの積分区間は$x_0 \leq x \leq x_1$
+    \item yの積分区間は$y_0 \leq y \leq y_1$
+\end{description}
+$$
+    f(x)=
+    \begin{cases}
+        \int_{-y_0}^{y_1} f(z/y) g(y)\,dy   & if\ \exists y,\  y\in \{ y_0 \leq y \leq y_1 \ | \ x_0 \leq z/y \leq x_1 \}\\
+        0                                   & otherwise,
+    \end{cases}
+$$
+(上の条件、$y_0 \leq y \leq y_1$と$x_0 \leq z/y \leq x_1$を同時に満たすyが存在する場合。と言いたい)
+
+
+\subsection{Z=X/Y}
+商の計算。
+\subsubsection{不定積分と-∞から∞までの定積分}
+不定積分
+$$
+    h(z) = \int |y| f(yz) g(y)\,dy
+$$
+
+-∞から∞までの定積分
+$$
+    h(z) = \int_{-\infty}^{\infty} |y| f(yz) g(y)\,dy
+$$
+\subsubsection{定積分}
+\begin{description}
+    \item xの積分区間は$x_0 \leq x \leq x_1$
+    \item yの積分区間は$y_0 \leq y \leq y_1$
+\end{description}
+$$
+    f(x)=
+    \begin{cases}
+        \int_{-y_0}^{y_1} f(yz) g(y)\,dy   & if\ \exists y,\  y\in \{ y_0 \leq y \leq y_1 \ | \ x_0 \leq yz \leq x_1 \}\\
+        0                                   & otherwise,
+    \end{cases}
+$$
+(上の条件、$y_0 \leq y \leq y_1$と$x_0 \leq yz \leq x_1$を同時に満たすyが存在する場合。と言いたい)
+\newpage
+
+
+\section{確率密度関数が離散値の確率変数X,Yの四則演算}
+確率変数X,Yがともに離散値の時を考える章。\\
+\\
+
+この章のそれぞれの節における共通事項の一覧。
+\begin{description}
+    \item $h(z_k) = \sum_{\{i,j\}_k} f(x_i) g(y_j)$
+    \item $i=1,2,3\cdots,N$
+    \item $j=1,2,3\cdots,M$
+    \item $k=1,2,3\cdots,L$\ \ (Lは$1\leq L \leq N+M$を満たす自然数。)
+    \item $x_{i+1}=x_i+d_i$ \ \ \ \ ($d_i>0$)
+    \item $y_{j+1}=y_j+d_j$ \ \ \ \ ($d_j>0$)
+    \item $z_{k+1}=z_k+d_k$ \ \ \ \ ($d_k>0$)
+\end{description}
+
+\subsection{Z=X+Y}
+和の
+$\{ i,j \}_k = \{ (i,j) | z_k = x_i + y_j \}$
+
+\subsection{Z=X-Y}
+差の
+$\{ i,j \}_k = \{ (i,j) | z_k = x_i - y_j \}$
+
+\subsection{Z=XY}
+積の
+$\{ i,j \}_k = \{ (i,j) | z_k = x_i y_j \}$
+
+\subsection{Z=X/Y}
+商の
+$\{ i,j \}_k = \{ (i,j) | z_k = x_i / y_j \}$
+
+
+
+\end{document}
