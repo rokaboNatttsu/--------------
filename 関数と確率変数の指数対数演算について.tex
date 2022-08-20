@@ -1,0 +1,68 @@
+\documentclass[a4paper,11pt]{ltjsarticle}
+\usepackage{amsmath}
+\begin{document}
+\tableofcontents
+\newpage
+
+
+
+\section{共通する前提}
+内容の正しさは自信ない。特に数学記号の使い方。\\
+
+これ以降、共通して用いる変数・関数\\
+$f(x), g(y), h(z)$:確率密度関数\\
+$X, Y, Z$:確率変数\\
+$A$:(確率変数ではない)変数および定数\\
+$i,j,k,N,M,L$:自然数\\
+$X=f(x), Y=g(y), Z=h(z)$\\
+特に断りがなければ、X,Y,Zは独立な確率変数\\
+特に断りがなければ、x,y,zは独立な変数
+\newpage
+
+
+\section{確率変数XとAの演算}
+\subsection{$X^A$}
+$Y=X^A$のとき。%ここ考えてるとこ
+$g(y) = \frac{f(x/(Ax^{A-1}))}{Ax^{A-1}}$
+\ \ \ \ ($y=x^A$)
+\subsection{$A^X$}
+$Y=A^X$のとき。
+$g(y) = $
+\ \ \ \ ($y=A^x$)
+\subsection{$\log_AX$}
+$\log_AX$のとき。
+$g(y) = $
+\ \ \ \ ($y=\log_Ax$)
+\subsection{$\log_XA$}
+$\log_XA$のとき。
+$g(y) = $
+\ \ \ \ ($y=\log_xA$)
+\newpage
+
+\section{確率密度関数が連続値の確率変数X,Yの演算$X^Y$}
+$Z=X^Y$について。
+\subsection{不定積分と$-\infty$から$\infty$までの定積分}
+$$
+    h(z) = \int \frac{1}{|yz^{1-1/y}|} f(z^{1/y}) g(y) \, dy
+$$
+$$
+    h(z) = \int_{-\infty}^{\infty} \frac{1}{|yz^{1-1/y}|} f(z^{1/y}) g(y) \, dy
+$$
+\subsection{定積分}
+\begin{description}
+    \item xの積分区間は$x_0 \leq x \leq x_1$
+    \item yの積分区間は$y_0 \leq y \leq y_1$
+\end{description}
+$$
+    h(z)=
+    \begin{cases}
+        \int_{-\infty}^{\infty} \frac{1}{|yz^{1-1/y}|} f(z^{1/y}) g(y) \, dy    & if\ \exists y,\  y\in \{ y_0 \leq y \leq y_1 \ | \ x_0 \leq z^{1/y} \leq x_1 \}\\
+        0                                                                       & otherwise,
+    \end{cases}
+$$
+\newpage
+
+\section{確率密度関数が離散値の確率変数X,Yの演算$X^Y$}
+
+
+\end{document}
