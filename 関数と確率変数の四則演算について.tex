@@ -20,7 +20,7 @@ $X=f(x), Y=g(y), Z=h(z)$\\
 \newpage
 
 
-\section{確率変数XとAの四則演算}
+\section{確率変数Xと定数Aの四則演算}
 \subsection{和・足し算}
 $Y=X+A$のとき。$g(y) = f(x-A)$\ \ \ \ ($y=x-A$)
 \subsection{差・引き算}
@@ -117,9 +117,9 @@ $$
 $$
     h(z)=
     \begin{cases}
-        \int_{y_0}^{y_1} f(z+y) g(y)\,dy    & if\ x_0y \leq z \leq x_1y \ \ \forall y\in \{ y_0 \leq y \leq y_1\},\\
-        積分区間を分割するべし                & else \ if\ x_0y \leq z \leq x_1y \ \ \exists y\in \{ y_0 \leq y \leq y_1\}, \\
-        0                                   & otherwise,
+        \int_{y_0}^{y_1} \frac{1}{|y|} f(z/y) g(y)\,dy  & if\ x_0y \leq z \leq x_1y \ \ \forall y\in \{ y_0 \leq y \leq y_1\},\\
+        積分区間を分割するべし                            & else \ if\ x_0y \leq z \leq x_1y \ \ \exists y\in \{ y_0 \leq y \leq y_1\}, \\
+        0                                               & otherwise,
     \end{cases}
 $$
 (一番上の条件、$y_0 \leq y \leq y_1$を満たすすべての$y$が$x_0 \leq z/y \leq x_1$を満たす場合。と言いたい)
@@ -145,7 +145,7 @@ $$
 $$
     h(z)=
     \begin{cases}
-        \int_{y_0}^{y_1} f(z+y) g(y)\,dy    & if\ x_0 \leq yz \leq x_1 \ \ \forall y\in \{ y_0 \leq y \leq y_1\},\\
+        \int_{y_0}^{y_1} |y| f(yz) g(y)\,dy & if\ x_0 \leq yz \leq x_1 \ \ \forall y\in \{ y_0 \leq y \leq y_1\},\\
         積分区間を分割するべし                & else \ if\ x_0 \leq yz \leq x_1 \ \ \exists y\in \{ y_0 \leq y \leq y_1\}, \\
         0                                   & otherwise,
     \end{cases}
@@ -161,7 +161,7 @@ $$
 
 この章のそれぞれの節における共通事項の一覧。
 \begin{description}
-    \item $h(z_k) = \sum_{\{i,j\}_k} f(x_i) g(y_j)$
+    \item $h(z_k) = \sum_{\{ i,j \}_k} f(x_i)g(y_j)$
     \item $i=1,2,3\cdots,N$
     \item $j=1,2,3\cdots,M$
     \item $k=1,2,3\cdots,L$\ \ (Lは$1\leq L \leq N+M$を満たす自然数。)

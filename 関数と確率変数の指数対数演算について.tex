@@ -21,6 +21,7 @@ $X=f(x), Y=g(y), Z=h(z)$\\
 
 
 \section{確率変数XとAの演算}
+ここの章、まだ編集中
 \subsection{$X^A$}
 $Y=X^A$のとき。%ここ考えてるとこ
 $g(y) = \frac{f(x/(Ax^{A-1}))}{Ax^{A-1}}$
@@ -40,7 +41,7 @@ $g(y) = $
 \newpage
 
 
-\section{確率密度関数が連続値の確率変数X,Yの演算$X^Y$}
+\section{確率密度関数が連続値の確率変数X,Yの演算}
 $Z=X^Y$について。
 \subsection{不定積分と$-\infty$から$\infty$までの定積分}
 $$
@@ -64,7 +65,25 @@ $$
 \newpage
 
 
-\section{確率密度関数が離散値の確率変数X,Yの演算$X^Y$}
+\section{確率密度関数が離散値の確率変数X,Yの演算}
+確率変数X,Yがともに離散値の時を考える章。\\
+\\
 
+この章のそれぞれの節における共通事項の一覧。
+\begin{description}
+    \item $h(z_k) = \sum_{\{ i,j \}_k} f(x_i)g(y_j)$
+    \item $i=1,2,3\cdots,N$
+    \item $j=1,2,3\cdots,M$
+    \item $k=1,2,3\cdots,L$\ \ (Lは$1\leq L \leq N+M$を満たす自然数。)
+    \item $x_{i+1}=x_i+d_i$ \ \ \ \ ($d_i>0$)
+    \item $y_{j+1}=y_j+d_j$ \ \ \ \ ($d_j>0$)
+    \item $z_{k+1}=z_k+d_k$ \ \ \ \ ($d_k>0$)
+\end{description}
+
+\subsection{$Z=X^Y$}
+$\{ i,j \}_k = \{ (i,j) | z_k = x_i^{y_j} \}$
+
+\subsection{$Z=\log(X)$}
+$\{ i,j \}_k = \{ (i,j) | z_k = \log(x_i) \}$
 
 \end{document}
